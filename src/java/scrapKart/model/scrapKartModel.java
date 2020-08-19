@@ -621,7 +621,7 @@ public class scrapKartModel {
        Connection conn=DBConnection.getConnection();
        PreparedStatement ps1=conn.prepareStatement("update assign set pk_Id="+"'"+pkId+"'"+",status='Assigned' where req_id="+"'"+requestId+"'");
        int row1=ps1.executeUpdate();  
-       //is scheduledate ko sql date m change krke update statement m daalna hai.
+      
      
        System.out.println("Sch date"+scheduleDate);
  
@@ -630,14 +630,9 @@ public class scrapKartModel {
        ps2.setString(2,requestId);
        
        int row2=ps2.executeUpdate();
-       System.out.println("row1="+row1+" row2="+row2);   // query chala k dikhaau?? haan dikha, sunn, m!!! rukja ! Mujhe lag raha hai ke is scheduleDate naamke variable me alag formate me date aarahi hai
+       System.out.println("row1="+row1+" row2="+row2);   
        
-       //isliye wo table me mil hi nahi rahi, aur wo change bhi reflect nahi ho paaya.
-       //konsa forma
-//       //ek baar run kar wapas
-       //ye file tak code run nahi ho raha hai kya?
-       //check kar isko. main 10 min se reply karta hu. connected rakh! //soja tu yr//pata ni kya horha hai dekhti hu m //goodnight!
-       ///ruk, server restart kar
+ 
        if(row1>0&&row2>0)
            return true;
        else
